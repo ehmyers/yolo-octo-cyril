@@ -34,7 +34,7 @@ class Ball { //Declaring class properties
     sphere(50);
   }
 
-  void xBounce() {
+  void xBounce() { //...and to bounce the ball
     xVel *= .9;
     xVel = -xVel;
   }

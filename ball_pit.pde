@@ -1,20 +1,21 @@
 //Bouncing BALLZ
-//Emily Myers, August 5th, 2010
 
 // [it's ARRAY TIME!!!] (And declaring universal variables)
-Ball ballz[]; //CHANGE NAME!
-int numBallz = 100;
-int dim = 500;
+Ball ballz[];
+int numBallz = 4;
 float accel = .07;
 
 void setup() {
   colorMode(HSB); //Sets the color mode
+  size(500, 500, P3D); //Sets the size of the screen
   noStroke(); //Eliminates lines
-  size(dim, dim); //Sets the size of the screen
+  lights(); //Turns the lights on
+  //translate(58, 48, 0);
+  //sphere(28);
 
   ballz = new Ball[numBallz];
   for (int i = 0; i<numBallz; i++) {
-    ballz[i] = new Ball(random(width), random(height),
+    ballz[i] = new Ball(random(width), random(height), random(height),
     color(random(255), random(200, 255), random(50, 200)));
   }
 }

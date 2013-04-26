@@ -9,7 +9,7 @@ class Ball { //Declaring class properties
   float zVel;
   float xAcc = 0;
   float yAcc = accel;
-  float zAcc = accel;
+  float zAcc = 0;
 
   Ball(float xPos, float yPos, float zPos, color myColor) {
     x = xPos;

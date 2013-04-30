@@ -33,14 +33,22 @@ class Pit {
       if (d < 100) {
         float dx = ballz[i].x - ballz[j].x;
         float dy = ballz[i].y - ballz[j].y;
-        float f = 0.5; //sqrt(pow((ballz[i].xVel + ballz[j].xVel), 2) + 
-                       //pow((ballz[i].yVel + ballz[j].yVel), 2));
+        float dz = ballz[i].z - ballz[j].z;
         
+        float xF = ballz[i].xVel + ballz[j].xVel;
+        float yF = ballz[i].yVel + ballz[j].yVel;
+        float zF = ballz[i].zVel + ballz[j].zVel;
+        float totalF = sqrt(pow(xF, 2) + pow(yF, 2) + pow(zF, 2));
+        
+        float f = totalF * 0.45;
+
         ballz[i].xVel = f*(dx/d);
         ballz[i].yVel = f*(dy/d);
+        ballz[i].zVel = f*(dz/d);
         
         ballz[j].xVel = f*(-dx/d);
         ballz[j].yVel = f*(-dy/d);
+        ballz[j].zVel = f*(-dz/d);
       }
     }
   }
